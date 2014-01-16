@@ -279,12 +279,12 @@ else
 
 		// Clean up
 		$arcade_sort = pun_trim($_POST['arcade_sort']);
-		$arcade_showtop = pun_trim(intval($_POST['arcade_showtop']));
-		$arcade_numgames = pun_trim(intval($_POST['arcade_numgames']));
-		$arcade_numchamps = pun_trim(intval($_POST['arcade_numchamps']));
-		$arcade_live = pun_trim(intval($_POST['arcade_live']));
-		$arcade_numnew = pun_trim(intval($_POST['arcade_numnew']));
-		$arcade_mostplayed = pun_trim(intval($_POST['arcade_mostplayed']));
+		$arcade_showtop = intval($_POST['arcade_showtop']);
+		$arcade_numgames = intval($_POST['arcade_numgames']);
+		$arcade_numchamps = intval($_POST['arcade_numchamps']);
+		$arcade_live = intval($_POST['arcade_live']);
+		$arcade_numnew = intval($_POST['arcade_numnew']);
+		$arcade_mostplayed = intval($_POST['arcade_mostplayed']);
 						
 		$db->query('UPDATE '.$db->prefix.'config SET conf_value='.$arcade_showtop.' WHERE conf_name="arcade_showtop" LIMIT 1') or error('Unable to update arcade_showtop in config', __FILE__, __LINE__, $db->error());
 		$db->query('UPDATE '.$db->prefix.'config SET conf_value='.$arcade_numchamps.' WHERE conf_name="arcade_numchamps" LIMIT 1') or error('Unable to update arcade_numchamps in config', __FILE__, __LINE__, $db->error());
