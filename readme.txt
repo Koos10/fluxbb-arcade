@@ -1,26 +1,34 @@
 ##
-##        Mod title:  PunBB Arcade Mod
+##        Mod title:  FluxBB Arcade Mod
 ##
 ##      Mod version:  1.2.0
-##   Works on PunBB:  1.2.*
-##     Release date:  2013-04-16
-##           Author:  ANGO
-##       Updated by:  Koos (pampoen10@yahoo.com)
+##  Works on FluxBB:  1.4.* and 1.5.*
+##     Release date:  2014-01-09
+##           Author:  Koos (pampoen10@yahoo.com)
+##  Original Author:  ANGO
 ##
-##      Description:  This mod add flash games to your punbb forum it also has a high score system.                  
-##
-##       Affects DB:  Yes
+##      Description:  This mod add flash games to your FluxBB forum. It also has a high score system.                  
 ##
 ##   Affected files:  none
 ##
+##       Affects DB:  New tables:
+##                       'arcade_ranking'
+##                       'arcade_games'
+##                    New options in 'config' table:
+##                       'arcade_showtop'
+##                       'arcade_numchamps'
+##                       'arcade_live'
+##                       'arcade_numnew'
+##                       'arcade_mostplayed'
+##
 ##            Notes:  This Mod Comes with 10 Pre-installed Games. Additional games come as extension.
 ##
-##       Disclaimer:  "Punbb Arcade Mod" is not officially supported by PunBB.
+##       Disclaimer:  "FluxBB Arcade Mod" is not officially supported by FluxBB.
 ##                    Installation of this modification is done at your
 ##                    own risk. Backup your forum database and any and all
 ##                    applicable files before proceeding.
 ##
-##          License:  Punbb Arcade Mod is free software; you can redistribute it
+##          License:  FluxBB Arcade Mod is free software; you can redistribute it
 ##                    and/or modify it under the terms of the GNU General
 ##                    Public License as published by the Free Software
 ##                    Foundation; either version 2 of the License, or
@@ -51,7 +59,7 @@ install_mod_g.php   (with german game descriptions)
 
 ... it looks like this:
 
-|-[punbb root]
+|-[fluxbb root]
 |         |-[plugins]
 |         |-[lang]
 |         |-[games]

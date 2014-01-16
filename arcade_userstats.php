@@ -3,7 +3,7 @@
 define('PUN_ROOT', './');
 require PUN_ROOT.'include/common.php';
 
-$page_title = pun_htmlspecialchars($pun_config['o_board_title']).' / Arcade Userstats';
+$page_title = array(pun_htmlspecialchars($pun_config['o_board_title']), 'Arcade Userstats');
 
 if ($pun_user['g_read_board'] == '0')
 	message($lang_common['No view']);
