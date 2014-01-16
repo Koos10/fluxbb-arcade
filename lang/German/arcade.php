@@ -3,8 +3,11 @@
 // Language definitions used in arcade.php
 $lang_arcade = array(
 
+'Arcade'			=>	'Arcade',
 'Games'				=>	'Spiele',
-'Arcade Games'		=>	'Arcade Games',
+'Arcade Games'		=>	'Arcade Spiele',
+'Arcade Scores'		=>	'Arcade Spielstände',
+'Arcade Userstats'	=>	'Arcade Benutzerstatistik',
 'Play'				=>	'Spiele',
 'View Highscore'	=>	'Zeige Bestenliste',
 'Top highscore'		=>	'Aktueller Highscore: ',

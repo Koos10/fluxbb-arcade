@@ -2,8 +2,9 @@
 
 define('PUN_ROOT', './');
 require PUN_ROOT.'include/common.php';
+require PUN_ROOT.'lang/'.$pun_user['language'].'/arcade.php';
 
-$page_title = array(pun_htmlspecialchars($pun_config['o_board_title']), 'Arcade Userstats');
+$page_title = array(pun_htmlspecialchars($pun_config['o_board_title']), pun_htmlspecialchars($lang_arcade['Arcade Userstats']));
 
 if ($pun_user['g_read_board'] == '0')
 	message($lang_common['No view']);
@@ -12,7 +13,6 @@ if ($pun_user['is_guest'])
 	message($lang_common['No permission']);
 
 require PUN_ROOT.'header.php';
-require PUN_ROOT.'lang/'.$pun_user['language'].'/arcade.php';
 
 if(isset($_GET['id']) && !empty($_GET['id']))
 {

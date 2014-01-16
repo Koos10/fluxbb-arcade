@@ -43,8 +43,8 @@ $sqlquery = '';
 if (!defined('PUN_ROOT')) define('PUN_ROOT','./');
 
 require PUN_ROOT.'include/common.php';
-$page_title = array(pun_htmlspecialchars($pun_config['o_board_title']), 'Arcade Games');
 require PUN_ROOT.'lang/'.$pun_user['language'].'/arcade.php';
+$page_title = array(pun_htmlspecialchars($pun_config['o_board_title']), pun_htmlspecialchars($lang_arcade['Arcade Games']));
 require PUN_ROOT.'header.php';
 
 if (!function_exists('generate_config_cache'))

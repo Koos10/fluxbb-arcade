@@ -25,7 +25,7 @@ if ($line['game_id'] < 1)
 	message($lang_common['Bad request']);
 
 
-$page_title = array(pun_htmlspecialchars($pun_config['o_board_title']), 'Arcade', pun_htmlspecialchars($line['game_name']));
+$page_title = array(pun_htmlspecialchars($pun_config['o_board_title']), pun_htmlspecialchars($lang_arcade['Arcade']), pun_htmlspecialchars($line['game_name']));
 
 require PUN_ROOT.'header.php';
 
