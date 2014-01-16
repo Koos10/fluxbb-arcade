@@ -20,6 +20,7 @@
 ##                       'arcade_live'
 ##                       'arcade_numnew'
 ##                       'arcade_mostplayed'
+##                       'arcade_allow_guests'
 ##
 ##            Notes:  This Mod Comes with 10 Pre-installed Games. Additional games come as extension.
 ##

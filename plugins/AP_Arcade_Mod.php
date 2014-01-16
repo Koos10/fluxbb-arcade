@@ -285,13 +285,15 @@ else
 		$arcade_live = intval($_POST['arcade_live']);
 		$arcade_numnew = intval($_POST['arcade_numnew']);
 		$arcade_mostplayed = intval($_POST['arcade_mostplayed']);
-						
+		$arcade_allow_guests = intval($_POST['arcade_allow_guests']);
+
 		$db->query('UPDATE '.$db->prefix.'config SET conf_value='.$arcade_showtop.' WHERE conf_name="arcade_showtop" LIMIT 1') or error('Unable to update arcade_showtop in config', __FILE__, __LINE__, $db->error());
 		$db->query('UPDATE '.$db->prefix.'config SET conf_value='.$arcade_numchamps.' WHERE conf_name="arcade_numchamps" LIMIT 1') or error('Unable to update arcade_numchamps in config', __FILE__, __LINE__, $db->error());
 		$db->query('UPDATE '.$db->prefix.'config SET conf_value='.$arcade_live.' WHERE conf_name="arcade_live" LIMIT 1') or error('Unable to update permissions in config', __FILE__, __LINE__, $db->error());
 		$db->query('UPDATE '.$db->prefix.'config SET conf_value='.$arcade_numnew.' WHERE conf_name="arcade_numnew" LIMIT 1') or error('Unable to update permissions in config', __FILE__, __LINE__, $db->error());
 		$db->query('UPDATE '.$db->prefix.'config SET conf_value='.$arcade_mostplayed.' WHERE conf_name="arcade_mostplayed" LIMIT 1') or error('Unable to update permissions in config', __FILE__, __LINE__, $db->error());
-		
+		$db->query('UPDATE '.$db->prefix.'config SET conf_value='.$arcade_allow_guests.' WHERE conf_name="arcade_allow_guests" LIMIT 1') or error('Unable to update permissions in config', __FILE__, __LINE__, $db->error());
+
 		// Regenerate the config cache
 		require_once PUN_ROOT.'include/cache.php';
 		generate_config_cache();
@@ -326,6 +328,10 @@ else
 								<tr>
 									<td><strong>Display Statistic</strong>&nbsp;&nbsp;&nbsp;&nbsp;
 									<input type="radio" name="arcade_showtop" value="1"<?php if ($pun_config['arcade_showtop'] == '1') echo ' checked="checked"'?> />&nbsp;Yes&nbsp;&nbsp;<input type="radio" name="arcade_showtop" value="0"<?php if ($pun_config['arcade_showtop'] == '0') echo ' checked="checked"'; ?> />&nbsp;No<br /></td>
+								</tr>
+								<tr>
+									<td><strong>Allow Guest Access</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="radio" name="arcade_allow_guests" value="1"<?php if ($pun_config['arcade_allow_guests'] == '1') echo ' checked="checked"'?> />&nbsp;Yes&nbsp;&nbsp;<input type="radio" name="arcade_allow_guests" value="0"<?php if ($pun_config['arcade_allow_guests'] == '0') echo ' checked="checked"'; ?> />&nbsp;No<br /></td>
 								</tr>
 								<tr>
 									<td><strong>Champions:</strong> <br/> <input type="text" name="arcade_numchamps" value="<?php echo $pun_config['arcade_numchamps']?>" size="20" tabindex="1" />

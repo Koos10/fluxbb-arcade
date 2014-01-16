@@ -9,7 +9,7 @@ $page_title = array(pun_htmlspecialchars($pun_config['o_board_title']), pun_html
 if ($pun_user['g_read_board'] == '0')
 	message($lang_common['No view']);
 	
-if ($pun_user['is_guest'])
+if ($pun_user['is_guest'] && $pun_config['arcade_allow_guests'] != '1')
 	message($lang_common['No permission']);
 
 require PUN_ROOT.'header.php';

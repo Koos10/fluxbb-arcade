@@ -66,5 +66,6 @@ $lang_arcade = array(
 'name'				=>	'Gamename',
 'date'				=>	'Date',
 'randomg'			=>	'Random Game',
+'register'			=>	'You must login or register before you can submit your score.',
 
 );

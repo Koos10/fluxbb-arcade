@@ -66,5 +66,6 @@ $lang_arcade = array(
 'name'				=>	'Nom de jeu ',
 'date'				=>	'Date',
 'randomg'			=>	'Jeu aléatoire ',
+'register'			=>	'Pour pouvoir enregistrer vos scores vous devez vous identifier ou faire votre inscription.',
 
 );

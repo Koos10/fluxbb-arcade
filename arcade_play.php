@@ -7,7 +7,7 @@ require PUN_ROOT.'lang/'.$pun_user['language'].'/arcade.php';
 if (!function_exists('generate_config_cache'))
 	require PUN_ROOT.'include/cache.php';
 	
-if ($pun_user['is_guest'])
+if ($pun_user['is_guest'] && $pun_config['arcade_allow_guests'] != '1')
 	message($lang_common['No permission']);
 
 $game_name = isset($_GET['id']) ? intval($_GET['id']) : 0;

@@ -66,5 +66,6 @@ $lang_arcade = array(
 'name'				=>	'Spielname',
 'date'				=>	'Datum',
 'randomg'			=>	'Zufälliges Spiel',
+'register'			=>	'Sie müssen sich anmelden oder registrieren, bevor Sie Ihre Punktzahl zu senden.',
 
 );

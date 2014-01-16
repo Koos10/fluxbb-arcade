@@ -54,7 +54,7 @@ if ($pun_config['arcade_live'] == '0')
     message($lang_arcade['arcade disabled']);
     
     
-if (!$pun_user['is_guest'])
+if (!$pun_user['is_guest'] || $pun_config['arcade_allow_guests'] == '1')
 {
 	// Fetch total game count
 	$result = $db->query('SELECT COUNT(game_id) FROM '.$db->prefix.'arcade_games') or error('Unable to fetch total game count', __FILE__, __LINE__, $db->error());

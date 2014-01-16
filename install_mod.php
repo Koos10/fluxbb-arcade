@@ -123,7 +123,8 @@ function install()
 		'arcade_numchamps'					=> "'5'",
 		'arcade_live'				=> "'1'",
 		'arcade_numnew'				=> "'10'",
-		'arcade_mostplayed'			=> "'6'"
+		'arcade_mostplayed'			=> "'6'",
+		'arcade_allow_guests'			=> "'1'"
 	);
 
 	foreach ($config as $conf_name => $conf_value)
@@ -182,6 +183,7 @@ function restore()
 	$db->query('DELETE FROM '.$db->prefix.'config WHERE conf_name="arcade_live"') or error('Unable to delete "arcade_live" from config table', __FILE__, __LINE__, $db->error());
 	$db->query('DELETE FROM '.$db->prefix.'config WHERE conf_name="arcade_numnew"') or error('Unable to delete "arcade_numnew" from config table', __FILE__, __LINE__, $db->error());
 	$db->query('DELETE FROM '.$db->prefix.'config WHERE conf_name="arcade_mostplayed"') or error('Unable to delete "arcade_mostplayed" from config table', __FILE__, __LINE__, $db->error());	
+	$db->query('DELETE FROM '.$db->prefix.'config WHERE conf_name="arcade_allow_guests"') or error('Unable to delete "arcade_allow_guests" from config table', __FILE__, __LINE__, $db->error());	
 
 	// Regenerate the config cache
 	if (!defined('FORUM_CACHE_FUNCTIONS_LOADED'))
