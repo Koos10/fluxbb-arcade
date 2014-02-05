@@ -246,8 +246,8 @@ echo '<span><a href="arcade_play.php?id='.$line['game_id'].'" title="'.$lang_arc
 						</td>
 						<td valign="top" align="left" style="padding: 0px 0px 0px 0px; margin-top: 0px; margin-left: 0px; margin-right: 0px; margin-bottom: 0px; border:none;"><?php echo $lang_arcade['sortby']?><p>
 						<select id="sortby" name="sortby">
-						<option value="game_name" <?php if ($s_sortby == 'game_name') echo ' selected="selected"'?>><?php echo $lang_arcade['name']?></option>
-						<option value="game_id" <?php if ($s_sortby == 'game_id') echo ' selected="selected"'?>><?php echo $lang_arcade['date']?></option>
+						<option value="game_name" <?php if ($s_sortby == 'game_name') echo ' selected="selected"'?>><?php echo $lang_arcade['Game name']?></option>
+						<option value="game_id" <?php if ($s_sortby == 'game_id') echo ' selected="selected"'?>><?php echo $lang_arcade['Date']?></option>
 						</select><p>
 						</td>
 						<td valign="top" align="left" style="padding: 0px 0px 0px 0px; margin-top: 0px; margin-left: 0px; margin-right: 0px; margin-bottom: 0px; border:none;"><?php echo $lang_arcade['category']?><p>

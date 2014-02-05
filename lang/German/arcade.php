@@ -63,8 +63,7 @@ $lang_arcade = array(
 'cat8' 				=>  'Rennspiele',
 'cat9' 				=>  'Sportspiele',
 'sortby'			=>	'Sortieren nach',
-'name'				=>	'Spielname',
-'date'				=>	'Datum',
+'Game name'				=>	'Spielname',
 'randomg'			=>	'Zufälliges Spiel',
 'register'			=>	'Sie müssen sich anmelden oder registrieren, bevor Sie Ihre Punktzahl zu senden.',
 

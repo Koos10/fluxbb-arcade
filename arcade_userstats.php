@@ -32,7 +32,7 @@ if(isset($_GET['id']) && !empty($_GET['id']))
 			<th><b></b></th>
 			<th><b><?php echo $lang_arcade['Games']?></b></th>
 			<th><b><?php echo $lang_arcade['highscores']?></b></th>
-			<th><b><?php echo $lang_arcade['date']?></b></th>
+			<th><b><?php echo $lang_arcade['Date']?></b></th>
 			</tr>
 			
 <?php	// Added ORDER BY to solve the MySQL4 Problem

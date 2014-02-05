@@ -63,8 +63,7 @@ $lang_arcade = array(
 'cat8' 				=>  'Racing',
 'cat9' 				=>  'Sport',
 'sortby'			=>	'Sort by',
-'name'				=>	'Gamename',
-'date'				=>	'Date',
+'Game name'			=>	'Game name',
 'randomg'			=>	'Random Game',
 'register'			=>	'You must login or register before you can submit your score.',
 
