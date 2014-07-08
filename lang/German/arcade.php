@@ -67,4 +67,48 @@ $lang_arcade = array(
 'randomg'			=>	'Zufälliges Spiel',
 'register'			=>	'Sie müssen sich anmelden oder registrieren, bevor Sie Ihre Punktzahl zu senden.',
 
+// Admin plugin
+'No name'			=>	'You need to enter a name for your game.',
+'No filename'		=>	'You need to enter a filename.',
+'No width'			=>	'You need to enter a width for your game.',
+'No description'	=>	'You need to enter description for your game.',
+'No height'			=>	'You need to enter a height for your game.',
+'No image'			=>	'You need to enter image for your game.',
+'No category'		=>	'You need to enter a category for your game.',
+
+'Existing games'		=>	'Existing games',
+'Add game'		=>	'Add game',
+'Game name message'		=>	'The name of the game. Example: <i>Space Invaders</i>',
+'Enter game settings'	=>	'Enter game settings and description',
+'Game ID'	=>	'ID',
+'Filename'	=>	'Filename',
+'Filename legend'		=>	'The filename of the game without the extension .swf. Example: <i>Invaders</i>',
+'Description'	=>	'Description',
+'Description legend'        =>	'Enter a short description of the game. This text may contain HTML.',
+'Image'	=>	'Image',
+'Image legend'	        =>	'The name of the thumb image. Example: <i>invaders.jpg</i> or <i>invaders.gif</i>',
+'Width'	=>	'Width',
+'Height'	=>	'Height',
+'Dimensions legend'                =>	'The dimensions of the game.',
+'Category legend'		=>	'Enter a game category for this game.',
+
+'Enable Arcade'	=>	'Enable Arcade',
+'Display Statistic'	=>	'Display Statistic',
+'Allow Guest Access'	=>	'Allow Guest Access',
+'Champions'	=>	'Champions',
+'Champions help'	=>	'Number of new champions',
+'new_games help'	=>	'Number of new games',
+'most_played help'	=>	'Number of most played games',
+
+'Delete Game'	=>	'Delete Game',
+'Delete game legend'	=>	'Important: read before deleting',
+'Delete game message 1'	=>	'<strong>Warning!</strong><br/><br/>Deleted Games cannot be restored.',
+'Delete game message 2'	=>	'Please confirm that you want to delete this game from the database.',
+
+'Arcade Mod Config'	=>	'Arcade Mod Config',
+'Index Page Settings'	=>	'Index Page Settings',
+'Game Settings'	=>	'Game Settings',
+'List Games'	=>	'List Games',
+'Add New Game'	=>	'Add New Game',
+
 );

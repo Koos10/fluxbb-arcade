@@ -7,6 +7,8 @@ if (!defined('PUN'))
 // Tell admin_loader.php that this is indeed a plugin and that it is loaded
 define('PUN_PLUGIN_LOADED', 1);
 
+require PUN_ROOT.'lang/'.$pun_user['language'].'/arcade.php';
+
 //===========================================================================//
 //= Start the script code =//
 
@@ -23,19 +25,19 @@ if($action == 'add')
 	{
 		// Check to see if the shortname, name and description were sent
 		if(empty($_POST['name']))
-			message('You need to enter a name for your game');
+			message($lang_arcade['No name']);
 		if(empty($_POST['filename']))
-			message('You need to enter a filename');
+			message($lang_arcade['No filename']);
 		if(empty($_POST['width']))
-			message('You need to enter a width for your game');
+			message($lang_arcade['No width']);
 		if(empty($_POST['description']))
-			message('You need to enter description for your game');
+			message($lang_arcade['No description']);
 		if(empty($_POST['height']))
-			message('You need to enter a height for your game');
+			message($lang_arcade['No height']);
 		if(empty($_POST['image']))
-			message('You need to enter image for your game');
+			message($lang_arcade['No image']);
 		if(empty($_POST['category']))
-			message('You need to enter a category for your game');
+			message($lang_arcade['No category']);
 
 		// Clean up filename, name and description from POST
 		$name = pun_trim($_POST['name']);
@@ -61,38 +63,39 @@ if($action == 'add')
 
 ?>
 	<div class="blockform">
-		<h2><span>Add game</span></h2>
+		<h2><span><?php echo $lang_arcade['Add game'] ?></span></h2>
 		<div class="box">
 			<form id="example" method="post" action="admin_loader.php?plugin=<?php echo $plugin ?>&amp;action=<?php echo $action ?>">
 				<input type="hidden" name="form_sent" value="TRUE" />
 				<div class="inform">
 					<fieldset>
-						<legend>Enter game settings and description</legend>
+						<legend><?php echo $lang_arcade['Enter game settings'] ?></legend>
 						<div class="infldset">
 							<table class="aligntop" cellspacing="0">
 								<tr>
-									<td><strong>Name:</strong> <br/> <input type="text" name="name" size="30" tabindex="1" />
-									<span>The name of the game. Example: <i>Space Invaders</i></span></td>
+									<td><strong><?php echo $lang_arcade['Name'] ?></strong> <br/> <input type="text" name="name" size="30" tabindex="1" />
+									<span><?php echo $lang_arcade['Game name message'] ?></span></td>
 								</tr>
 								<tr>
-									<td><strong>Filename:</strong> <br/> <input type="text" name="filename" size="30" tabindex="1" /> .swf<span>The filename of the game without the extension .swf. Example: <i>Invaders</i></span></td></td>
+									<td><strong><?php echo $lang_arcade['Filename'] ?></strong> <br/> <input type="text" name="filename" size="30" tabindex="1" /> .swf<span><?php echo $lang_arcade['Filename legend'] ?></span></td></td>
 								</tr>
 								<tr>
-									<td><strong>Description:</strong><br/><textarea name="description" tabindex="1" rows="8" cols="50" style="width:100%"></textarea><span>Enter a short description of the game. This text may contain HTML.</span></td></td>
-								</tr>
-									<td><strong>Image:</strong><br/> <input type="text" name="image" size="30" tabindex="1" /><span>The name of the thumb image. Example: <i>invaders.jpg</i> or <i>invaders.gif</i></span></td>
+									<td><strong><?php echo $lang_arcade['Description'] ?></strong><br/><textarea name="description" tabindex="1" rows="8" cols="50" style="width:100%"></textarea><span><?php echo $lang_arcade['Description legend'] ?></span></td></td>
 								</tr>
 								<tr>
-									<td><strong>Width:</strong><br/> <input type="text" name="width" size="30" tabindex="1" /><br /><br/><strong>Height:</strong><br/> <input type="text" name="height" size="30" tabindex="1" /><br/><span>The dimensions of the game.</span></td>
+									<td><strong><?php echo $lang_arcade['Image'] ?></strong><br/> <input type="text" name="image" size="30" tabindex="1" /><span><?php echo $lang_arcade['Image legend'] ?></span></td>
 								</tr>
 								<tr>
-									<td><strong>Category:</strong><br/> <input type="text" name="category" size="30" tabindex="1" /><span>Enter a game category for this game. <p>(1 = Arcade, 2 = Shooting, 3 = Puzzle, 4 = Skill, 5 = Card, 6 = Adventure, 7 = JumpAndRun, 8 = Racing, 9 = Sport)</span></td>
+									<td><strong><?php echo $lang_arcade['Width'] ?></strong><br/> <input type="text" name="width" size="30" tabindex="1" /><br /><br/><strong><?php echo $lang_arcade['Height'] ?></strong><br/> <input type="text" name="height" size="30" tabindex="1" /><br/><span><?php echo $lang_arcade['Dimensions legend'] ?></span></td>
+								</tr>
+								<tr>
+									<td><strong><?php echo $lang_arcade['category'] ?></strong><br/> <input type="text" name="category" size="30" tabindex="1" /><span><?php echo $lang_arcade['Category legend'] ?> <p>(1 = Arcade, 2 = Shooting, 3 = Puzzle, 4 = Skill, 5 = Card, 6 = Adventure, 7 = JumpAndRun, 8 = Racing, 9 = Sport)</span></td>
 								</tr>								
 							</table>
 						</div>
 					</fieldset>
 				</div>
-				<p><input type="submit" name="submit" value="Submit" tabindex="3" /><a href="javascript:history.go(-1)"><?php echo $lang_common['Go back'] ?></a></p>
+				<p class="buttons"><input type="submit" name="save" value="<?php echo $lang_admin_common['Save changes'] ?>" tabindex="3" /><a href="javascript:history.go(-1)"><?php echo $lang_common['Go back'] ?></a></p>
 			</form>
 		</div>
 	</div>
@@ -155,38 +158,38 @@ elseif($action == 'edit')
 				<input type="hidden" name="shortname" value="<?php echo $data['id']?>" size="50" tabindex="1" />
 				<div class="inform">
 					<fieldset>
-						<legend>Enter game settings and description</legend>
+						<legend><?php echo $lang_arcade['Enter game settings'] ?></legend>
 						<div class="infldset">
 							<table class="aligntop" cellspacing="0">
 								<tr>
-									<td><strong>Id</strong> <br/> <input type="text" name="id" value="<?php echo $data['game_id']?>" size="30" tabindex="1" /></td>
+									<td><strong><?php echo $lang_arcade['Game ID'] ?></strong> <br/> <input type="text" name="id" value="<?php echo $data['game_id']?>" size="30" tabindex="1" /></td>
 								</tr>
 								<tr>
-									<td><strong>Name</strong> <br/> <input type="text" name="name" value="<?php echo $data['game_name']?>" size="30" tabindex="1" /></td>
+									<td><strong><?php echo $lang_arcade['Name'] ?></strong> <br/> <input type="text" name="name" value="<?php echo $data['game_name']?>" size="30" tabindex="1" /></td>
 								</tr>
 								<tr>
-									<td><strong>Filename</strong> <br/> <input type="text" name="filename" value="<?php echo $data['game_filename']?>" size="30" tabindex="1" /> .swf</td>
+									<td><strong><?php echo $lang_arcade['Filename'] ?></strong> <br/> <input type="text" name="filename" value="<?php echo $data['game_filename']?>" size="30" tabindex="1" /> .swf</td>
 								</tr>
 								<tr>
-									<td><strong>Description</strong> <br/><textarea name="description" tabindex="1" rows="8" cols="50" style="width:100%"><?php echo pun_htmlspecialchars($data['game_desc'])?></textarea></td>
+									<td><strong><?php echo $lang_arcade['Description'] ?></strong> <br/><textarea name="description" tabindex="1" rows="8" cols="50" style="width:100%"><?php echo pun_htmlspecialchars($data['game_desc'])?></textarea></td>
 								</tr>
 								<tr>
-									<td><strong>Image</strong> <br/> <input type="text" name="image" value="<?php echo $data['game_image']?>" size="30" tabindex="1" /></td>
+									<td><strong><?php echo $lang_arcade['Image'] ?></strong> <br/> <input type="text" name="image" value="<?php echo $data['game_image']?>" size="30" tabindex="1" /></td>
 								</tr>
 								<tr>
-									<td><strong>Width</strong> <br/> <input type="text" name="width" value="<?php echo $data['game_width']?>" size="30" tabindex="1" /></td>
+									<td><strong><?php echo $lang_arcade['Width'] ?></strong> <br/> <input type="text" name="width" value="<?php echo $data['game_width']?>" size="30" tabindex="1" /></td>
 								</tr>
 								<tr>
-									<td><strong>Height</strong> <br/> <input type="text" name="height" value="<?php echo $data['game_height']?>" size="30" tabindex="1" /></td>
+									<td><strong><?php echo $lang_arcade['Height'] ?></strong> <br/> <input type="text" name="height" value="<?php echo $data['game_height']?>" size="30" tabindex="1" /></td>
 								</tr>
 								<tr>
-									<td><strong>Category:</strong><br/> <input type="text" name="category" value="<?php echo $data['game_cat']?>" size="30" tabindex="1" /><span>(1 = Arcade, 2 = Shooting, 3 = Puzzle, 4 = Skill, 5 = Card, 6 = Adventure, 7 = JumpAndRun, 8 = Racing, 9 = Sport)</span></td>
+									<td><strong><?php echo $lang_arcade['category'] ?></strong><br/> <input type="text" name="category" value="<?php echo $data['game_cat']?>" size="30" tabindex="1" /><span>(1 = Arcade, 2 = Shooting, 3 = Puzzle, 4 = Skill, 5 = Card, 6 = Adventure, 7 = JumpAndRun, 8 = Racing, 9 = Sport)</span></td>
 								</tr>								
 							</table>
 						</div>
 					</fieldset>
 				</div>
-				<p><input type="submit" name="submit" value="Submit" tabindex="3" /><a href="javascript:history.go(-1)"><?php echo $lang_common['Go back'] ?></a></p>
+				<p class="buttons"><input type="submit" name="save" value="<?php echo $lang_admin_common['Save changes'] ?>" tabindex="3" /><a href="javascript:history.go(-1)"><?php echo $lang_common['Go back'] ?></a></p>
 			</form>
 		</div>
 	</div>
@@ -208,19 +211,19 @@ elseif($action == 'delete')
 	generate_admin_menu($plugin);
 ?>
 	<div class="blockform">
-		<h2><span>Delete Game</span></h2>
+		<h2><span><?php echo $lang_arcade['Delete Game'] ?></span></h2>
 		<div class="box">
 			<form id="example" method="post" action="admin_loader.php?plugin=<?php echo $plugin ?>&amp;action=<?php echo $action?>&amp;id=<?php echo $id ?>">
 				<div class="inform">
 					<fieldset>
-						<legend>Important: read before deleting</legend>
+						<legend><?php echo $lang_arcade['Delete game legend'] ?></legend>
 						<div class="infldset">
-						<p><strong>Warning!</strong><br/><br/>Deleted Games cannot be restored.</p>
-						<p>Please confirm that you want to delete this game from the database.</p>
+						<p><?php echo $lang_arcade['Delete game message 1'] ?></p>
+						<p><?php echo $lang_arcade['Delete game message 2'] ?></p>
 						</div>
 					</fieldset>
 				</div>
-				<p><input type="submit" name="delete_comply" value="Delete" /><a href="javascript:history.go(-1)"><?php echo $lang_common['Go back'] ?></a></p>
+				<p class="buttons"><input type="submit" name="delete_comply" value="<?php echo $lang_admin_common['Delete'] ?>" /><a href="javascript:history.go(-1)"><?php echo $lang_common['Go back'] ?></a></p>
 			</form>
 		</div>
 	</div>
@@ -241,7 +244,7 @@ elseif($action == 'listgames')
 			<div class="fakeform">
 				<div class="inform">
 					<fieldset>
-					<legend>Existing games</legend>
+					<legend><?php echo $lang_arcade['Existing games'] ?></legend>
 						<div class="infldset">
 							<table cellspacing="0">
 <?php
@@ -310,61 +313,61 @@ else
 
 ?>
 	<div class="blockform">
-		<h2><span>Arcade Mod Config</span></h2>
+		<h2><span><?php echo $lang_arcade['Arcade Mod Config'] ?></span></h2>
 		<div class="box">
 			<form id="example" method="post" action="admin_loader.php?plugin=<?php echo $plugin ?>">
 				<input type="hidden" name="form_sent" value="TRUE" />
 				<div class="inform">
 					<fieldset>
-						<legend>Index Page Settings</legend>
+						<legend><?php echo $lang_arcade['Index Page Settings'] ?></legend>
 						<div class="infldset">
 							<table class="aligntop" cellspacing="0">
 								<tr>
-								<td><strong>Enable Arcade</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<input type="radio" name="arcade_live" value="1"<?php if ($pun_config['arcade_live'] == '1') { echo ' checked'; } ?> />&nbsp;Yes&nbsp;
-								<input type="radio" name="arcade_live" value="0"<?php if ($pun_config['arcade_live'] == '0') { echo ' checked'; } ?> />&nbsp;No
+								<td><strong><?php echo $lang_arcade['Enable Arcade'] ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="arcade_live" value="1"<?php if ($pun_config['arcade_live'] == '1') { echo ' checked'; } ?> />&nbsp;<?php echo $lang_admin_common['Yes'] ?>&nbsp;
+								<input type="radio" name="arcade_live" value="0"<?php if ($pun_config['arcade_live'] == '0') { echo ' checked'; } ?> />&nbsp;<?php echo $lang_admin_common['No'] ?>
 								</td>
 								</tr>
 								<tr>
-									<td><strong>Display Statistic</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-									<input type="radio" name="arcade_showtop" value="1"<?php if ($pun_config['arcade_showtop'] == '1') echo ' checked="checked"'?> />&nbsp;Yes&nbsp;&nbsp;<input type="radio" name="arcade_showtop" value="0"<?php if ($pun_config['arcade_showtop'] == '0') echo ' checked="checked"'; ?> />&nbsp;No<br /></td>
+									<td><strong><?php echo $lang_arcade['Display Statistic'] ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="radio" name="arcade_showtop" value="1"<?php if ($pun_config['arcade_showtop'] == '1') echo ' checked="checked"'?> />&nbsp;<?php echo $lang_admin_common['Yes'] ?>&nbsp;&nbsp;<input type="radio" name="arcade_showtop" value="0"<?php if ($pun_config['arcade_showtop'] == '0') echo ' checked="checked"'; ?> />&nbsp;<?php echo $lang_admin_common['No'] ?><br /></td>
 								</tr>
 								<tr>
-									<td><strong>Allow Guest Access</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-									<input type="radio" name="arcade_allow_guests" value="1"<?php if ($pun_config['arcade_allow_guests'] == '1') echo ' checked="checked"'?> />&nbsp;Yes&nbsp;&nbsp;<input type="radio" name="arcade_allow_guests" value="0"<?php if ($pun_config['arcade_allow_guests'] == '0') echo ' checked="checked"'; ?> />&nbsp;No<br /></td>
+									<td><strong><?php echo $lang_arcade['Allow Guest Access'] ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="radio" name="arcade_allow_guests" value="1"<?php if ($pun_config['arcade_allow_guests'] == '1') echo ' checked="checked"'?> />&nbsp;<?php echo $lang_admin_common['Yes'] ?>&nbsp;&nbsp;<input type="radio" name="arcade_allow_guests" value="0"<?php if ($pun_config['arcade_allow_guests'] == '0') echo ' checked="checked"'; ?> />&nbsp;<?php echo $lang_admin_common['No'] ?><br /></td>
 								</tr>
 								<tr>
-									<td><strong>Champions:</strong> <br/> <input type="text" name="arcade_numchamps" value="<?php echo $pun_config['arcade_numchamps']?>" size="20" tabindex="1" />
-								<br /><span>Number of new champions</span>
+									<td><strong><?php echo $lang_arcade['Champions'] ?></strong> <br/> <input type="text" name="arcade_numchamps" value="<?php echo $pun_config['arcade_numchamps']?>" size="20" tabindex="1" />
+								<br /><span><?php echo $lang_arcade['Champions help'] ?></span>
 									</td>
 								</tr>
 								<tr>
-									<td><strong>New Games:</strong> <br/> <input type="text" name="arcade_numnew" value="<?php echo $pun_config['arcade_numnew']?>" size="20" tabindex="1" />
-								<br /><span>Number of new games</span>
+									<td><strong><?php echo $lang_arcade['new_games'] ?></strong> <br/> <input type="text" name="arcade_numnew" value="<?php echo $pun_config['arcade_numnew']?>" size="20" tabindex="1" />
+								<br /><span><?php echo $lang_arcade['new_games help'] ?></span>
 									</td>
 								</tr>
 								<tr>
-									<td><strong>Most played:</strong> <br/> <input type="text" name="arcade_mostplayed" value="<?php echo $pun_config['arcade_mostplayed']?>" size="20" tabindex="1" />
-								<br /><span>Number of most played games</span>
+									<td><strong><?php echo $lang_arcade['most_played'] ?></strong> <br/> <input type="text" name="arcade_mostplayed" value="<?php echo $pun_config['arcade_mostplayed']?>" size="20" tabindex="1" />
+								<br /><span><?php echo $lang_arcade['most_played help'] ?></span>
 									</td>
 								</tr>
 							</table>
 						</div>
-						<p><input type="submit" name="submit" value="Submit" tabindex="1" /></p><br />
+						<p><input type="submit" name="save" value="<?php echo $lang_admin_common['Save changes'] ?>" tabindex="1" /></p><br />
 					</fieldset>
 				</div>
 		<fieldset>
-		<legend>Game Settings</legend>
+		<legend><?php echo $lang_arcade['Game Settings'] ?></legend>
 			<div class="infldset">
 				<table class="aligntop" cellspacing="0">
 					<tr>
 						<td>
-							<p><a href="admin_loader.php?plugin=<?php echo $plugin ?>&amp;action=listgames">List Games</a></p>
+							<p><a href="admin_loader.php?plugin=<?php echo $plugin ?>&amp;action=listgames"><?php echo $lang_arcade['List Games'] ?></a></p>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<p><a href="admin_loader.php?plugin=<?php echo $plugin ?>&amp;action=add">Add New Game</a></p>
+							<p><a href="admin_loader.php?plugin=<?php echo $plugin ?>&amp;action=add"><?php echo $lang_arcade['Add New Game'] ?></a></p>
 						</td>
 					</tr>
 				</table>
